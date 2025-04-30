@@ -1,19 +1,17 @@
 // controllers/chatController.js
-const conversationService = require('../services/conversationService');
+const conversationService = require("../services/conversationService");
 
 // In-memory conversation state (use Redis/DB for production)
-const conversationState = require('../utils/conversationState');
-
+const conversationState = require("../utils/conversationState");
 
 exports.startConversation = async (req, res) => {
-  console.log('Start Conversation Triggered');
+  console.log("Start Conversation Triggered");
   const userId = req.body.userId;
-  console.log('Received userId:', userId);
+  console.log("Received userId:", userId);
 
-  conversationState[userId] = conversationService.startNewConversation();
-
+  conversationState[userId] = await conversationService.startNewConversation();
   const firstQuestion = conversationService.getNextQuestion(userId);
-  console.log('Sending first question:', firstQuestion);
+  console.log("Sending first question:", firstQuestion);
 
   res.json({ message: firstQuestion });
 };
