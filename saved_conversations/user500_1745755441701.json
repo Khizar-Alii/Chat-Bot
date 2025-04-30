@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "userId": "user500",
+    "timestamp": "2025-04-27T12:04:01.701Z"
+  },
+  "conversation": [
+    {
+      "role": "bot",
+      "message": "What technical skills are you most proficient in?"
+    },
+    {
+      "role": "user",
+      "message": "React, React Native, JavaScript, Firebase, Next.js, CSS, Expo."
+    },
+    {
+      "role": "bot",
+      "message": "Can you briefly describe your last work experience?"
+    },
+    {
+      "role": "user",
+      "message": "Worked as a Frontend Developer at upwork, building mobile and web apps using React Native, React, and Firebase."
+    }
+  ]
+}

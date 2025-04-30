@@ -1,0 +1,16 @@
+{
+  "metadata": {
+    "userId": "user1",
+    "timestamp": "2025-04-27T20:28:01.927Z"
+  },
+  "conversation": [
+    {
+      "role": "bot",
+      "message": "Let's start with your full name, please."
+    },
+    {
+      "role": "user",
+      "message": "Done"
+    }
+  ]
+}
