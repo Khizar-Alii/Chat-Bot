@@ -21,7 +21,7 @@ exports.startNewConversation = async () => {
     "question1",
     "question2".....
     ]}  
-    no need of the category and always start questions with the profile setup like what is your name, what is your age etc but never ask for email also i need to save this data to my db so make the questions such that the user responds with brief details first then we can move towards vibrant details
+    no need of the category and always start questions with the profile setup like what is your name, what is your date of birth etc but never ask for email also i need to save this data to my db so make the questions such that the user responds with brief details first then we can move towards vibrant details
     `);
     console.log("summary====>", summary);
     const jsonMatch = summary.match(/{[\s\S]*}/);
