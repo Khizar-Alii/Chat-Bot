@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "userId": "user1",
+    "timestamp": "2025-04-30T09:59:38.424Z"
+  },
+  "conversation": [
+    {
+      "role": "bot",
+      "message": "What is your name?"
+    },
+    {
+      "role": "user",
+      "message": "my name is sultan"
+    },
+    {
+      "role": "bot",
+      "message": "How old are you?"
+    },
+    {
+      "role": "user",
+      "message": "28"
+    },
+    {
+      "role": "bot",
+      "message": "Where are you currently located?"
+    },
+    {
+      "role": "user",
+      "message": "lahore"
+    },
+    {
+      "role": "bot",
+      "message": "What is your phone number?"
+    },
+    {
+      "role": "user",
+      "message": "03059256889"
+    },
+    {
+      "role": "bot",
+      "message": "Briefly describe your technical skills."
+    },
+    {
+      "role": "user",
+      "message": "I am a senior react native developer"
+    }
+  ]
+}

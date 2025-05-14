@@ -6,8 +6,10 @@ const conversationState = require("../utils/conversationState");
 
 // Initialize a new conversation
 exports.startNewConversation = async () => {
-  const summary =
-    await geminiService.askGemini(`can you give me array of qustions from this set and please send the json data i am using it in code
+  try {
+    console.log("test");
+    const summary =
+      await geminiService.askGemini(`can you give me array of qustions from this set and please send the json data i am using it in code
     [
       "Introduction",
       "Technical Skills",
@@ -21,34 +23,37 @@ exports.startNewConversation = async () => {
     ]}  
     no need of the category and always start questions with the profile setup like what is your name, what is your age etc but never ask for email also i need to save this data to my db so make the questions such that the user responds with brief details first then we can move towards vibrant details
     `);
-  console.log("summary====>", summary);
-  const jsonMatch = summary.match(/{[\s\S]*}/);
+    console.log("summary====>", summary);
+    const jsonMatch = summary.match(/{[\s\S]*}/);
 
-  if (jsonMatch) {
-    try {
-      const jsonData = JSON.parse(jsonMatch[0]);
-      console.log("Extracted JSON:", jsonData);
-      return {
-        askedCategories: [],
-        conversation: [],
-        retries: 0,
-        questions: jsonData.questions,
-      };
-    } catch (error) {
-      console.error("Failed to parse JSON:", error);
+    if (jsonMatch) {
+      try {
+        const jsonData = JSON.parse(jsonMatch[0]);
+        console.log("Extracted JSON:", jsonData);
+        return {
+          askedCategories: [],
+          conversation: [],
+          retries: 0,
+          questions: jsonData.questions,
+        };
+      } catch (error) {
+        console.error("Failed to parse JSON:", error);
+        return {
+          askedCategories: [],
+          conversation: [],
+          retries: 0,
+        };
+      }
+    } else {
+      console.error("No JSON found in the input string.");
       return {
         askedCategories: [],
         conversation: [],
         retries: 0,
       };
     }
-  } else {
-    console.error("No JSON found in the input string.");
-    return {
-      askedCategories: [],
-      conversation: [],
-      retries: 0,
-    };
+  } catch (error) {
+    console.log("error", error);
   }
 };
 
@@ -114,7 +119,7 @@ exports.checkAutoStop = (userId, answer) => {
   if (state.askedCategories.length === state.questions.length) {
     return true;
   } else if (
-    state.questions &&
+    !state.questions &&
     state.askedCategories.length >= CATEGORIES.length
   ) {
     return true;

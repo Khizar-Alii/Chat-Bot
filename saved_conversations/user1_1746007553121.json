@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "userId": "user1",
+    "timestamp": "2025-04-30T10:05:53.121Z"
+  },
+  "conversation": [
+    {
+      "role": "bot",
+      "message": "What is your name?"
+    },
+    {
+      "role": "user",
+      "message": "sultan"
+    },
+    {
+      "role": "bot",
+      "message": "How old are you?"
+    },
+    {
+      "role": "user",
+      "message": "28"
+    },
+    {
+      "role": "bot",
+      "message": "Where are you currently located?"
+    },
+    {
+      "role": "user",
+      "message": "lahore"
+    },
+    {
+      "role": "bot",
+      "message": "What is your phone number?"
+    },
+    {
+      "role": "user",
+      "message": "3059256889"
+    },
+    {
+      "role": "bot",
+      "message": "Briefly describe your technical skills."
+    },
+    {
+      "role": "user",
+      "message": "react native developer"
+    },
+    {
+      "role": "bot",
+      "message": "Summarize your work experience."
+    },
+    {
+      "role": "user",
+      "message": "i have more than 8 years of experiance in web and mobile application developer"
+    },
+    {
+      "role": "bot",
+      "message": "What are your short-term career goals?"
+    },
+    {
+      "role": "user",
+      "message": "i want to learn and grow with some reputible company"
+    },
+    {
+      "role": "bot",
+      "message": "What are your long-term career goals?"
+    },
+    {
+      "role": "user",
+      "message": "I want to start my own company"
+    },
+    {
+      "role": "bot",
+      "message": "Mention three of your key soft skills."
+    },
+    {
+      "role": "user",
+      "message": "communication, team management and learning"
+    },
+    {
+      "role": "bot",
+      "message": "Describe a time you demonstrated teamwork."
+    },
+    {
+      "role": "user",
+      "message": "Eeeee see"
+    },
+    {
+      "role": "bot",
+      "message": "Tell me about a technical challenge you overcame. "
+    },
+    {
+      "role": "user",
+      "message": "we made an realtime e rikshaw application"
+    },
+    {
+      "role": "bot",
+      "message": "What are your salary expectations?"
+    },
+    {
+      "role": "user",
+      "message": "300000"
+    },
+    {
+      "role": "bot",
+      "message": "What is your preferred work environment?"
+    },
+    {
+      "role": "user",
+      "message": "WFH"
+    },
+    {
+      "role": "bot",
+      "message": "What motivates you in a work setting?"
+    },
+    {
+      "role": "user",
+      "message": "Eeeee r r to to to see"
+    },
+    {
+      "role": "bot",
+      "message": "Are you willing to relocate?"
+    },
+    {
+      "role": "user",
+      "message": "yes"
+    },
+    {
+      "role": "bot",
+      "message": "What are your hobbies and interests outside of work?"
+    },
+    {
+      "role": "user",
+      "message": "video games"
+    },
+    {
+      "role": "bot",
+      "message": "Tell me about a time you failed and what you learned from it."
+    },
+    {
+      "role": "user",
+      "message": "a lot of time failed in understanding of people"
+    },
+    {
+      "role": "bot",
+      "message": "Describe your ideal work-life balance."
+    },
+    {
+      "role": "user",
+      "message": "to be able to work when it is required"
+    },
+    {
+      "role": "bot",
+      "message": "What are your strengths?"
+    },
+    {
+      "role": "user",
+      "message": "hyper focused on acheiving the goal"
+    },
+    {
+      "role": "bot",
+      "message": "What are your weaknesses?"
+    },
+    {
+      "role": "user",
+      "message": "sometime gets overattached to people at workplace"
+    },
+    {
+      "role": "bot",
+      "message": "What are your preferred methods of communication?"
+    },
+    {
+      "role": "user",
+      "message": "chat"
+    },
+    {
+      "role": "bot",
+      "message": "How do you handle stress and pressure?"
+    },
+    {
+      "role": "user",
+      "message": "i take pills"
+    },
+    {
+      "role": "bot",
+      "message": "What are you passionate about?"
+    },
+    {
+      "role": "user",
+      "message": "my work"
+    },
+    {
+      "role": "bot",
+      "message": "What attracts you to this specific role?"
+    },
+    {
+      "role": "user",
+      "message": "pay"
+    },
+    {
+      "role": "bot",
+      "message": "What are you looking for in a company culture?"
+    },
+    {
+      "role": "user",
+      "message": "soft spoken and easygoing company"
+    },
+    {
+      "role": "bot",
+      "message": "Give an example of a time you took initiative."
+    },
+    {
+      "role": "user",
+      "message": "Rrr by"
+    }
+  ]
+}
