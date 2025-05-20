@@ -9,19 +9,12 @@ exports.startNewConversation = async () => {
   try {
     console.log("test");
     const summary =
-      await geminiService.askGemini(`can you give me array of qustions from this set and please send the json data i am using it in code
-    [
-      "Introduction",
-      "Technical Skills",
-      "Work Experience",
-      "Career Goals",
-      "Soft Skills",
-    ]
+      await geminiService.askGemini(`can you give me array of qustions and please send the json data i am using it in code
     the response should be in following format {questions:[
     "question1",
     "question2".....
     ]}  
-    no need of the category and always start questions with the profile setup like what is your name, what is your date of birth etc but never ask for email also i need to save this data to my db so make the questions such that the user responds with brief details first then we can move towards vibrant details
+    no need of the category and always start questions with the profile setup like what is your name, what is your date of birth etc but never ask for email and always ask for date of birth instead of age also i need to save this data to my db so make the questions such that the user responds with brief details first then we can move towards vibrant details
     `);
     console.log("summary====>", summary);
     const jsonMatch = summary.match(/{[\s\S]*}/);
@@ -45,11 +38,13 @@ exports.startNewConversation = async () => {
         };
       }
     } else {
+      const question = [summary];
       console.error("No JSON found in the input string.");
       return {
         askedCategories: [],
         conversation: [],
         retries: 0,
+        questions: question,
       };
     }
   } catch (error) {
