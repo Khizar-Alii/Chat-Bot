@@ -69,6 +69,7 @@ app.post("/chat", async (req, res) => {
       parts: [{ text: msg.content }],
     })),
   ];
+  console.log("conversation====>", conversation);
   try {
     const url =
       "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent?key=" +
@@ -98,6 +99,7 @@ app.post("/generate-cv", async (req, res) => {
   if (!history || !Array.isArray(history)) {
     return res.status(400).json({ error: "No history provided" });
   }
+  console.log("generate-cv->history--------->", history);
   const userAnswers = history
     .filter((msg) => msg.role === "user")
     .map((msg) => msg.content);
