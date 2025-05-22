@@ -58,7 +58,18 @@ also when the CV is ready for view please include this in response i have all th
 - ask for social media handles for CV
 - ask for phone number for CV
 `;
-
+const promt = `You are a helpful AI assistant building a CV for the user.
+Ask questions one at a time, to collect all necessary information for a professional CV.
+After each answer, ask another relevant question, and continue until you have the user's:
+- Full name
+- Contact info (email, phone, location)
+- Professional summary
+- Work experience (companies, roles, dates, responsibilities)
+- Education (degrees, schools, dates)
+- Skills and certifications
+- Projects or notable achievements (optional)
+When you have enough data, say "I have all the info to generate your CV."
+Do NOT answer any other way, just keep asking for missing information.`;
 // /chat endpoint
 app.post("/chat", async (req, res) => {
   let { history } = req.body;
@@ -78,6 +89,38 @@ app.post("/chat", async (req, res) => {
     const body = {
       system_instruction: {
         parts: [{ text: SYSTEM_PROMPT }],
+      },
+      contents: conversation,
+    };
+
+    const response = await axios.post(url, body, {
+      headers: { "Content-Type": "application/json" },
+    });
+    const nextBotMsg = response.data.candidates?.[0]?.content?.parts?.[0]?.text;
+    res.json({ reply: nextBotMsg });
+  } catch (err) {
+    console.error(err.response?.data || err.message);
+    res.status(500).json({ error: "Gemini API error" });
+  }
+});
+app.post("/chat-without-gwah", async (req, res) => {
+  let { history } = req.body;
+  if (!history || !Array.isArray(history)) history = [];
+  const conversation = [
+    ...history.map((msg) => ({
+      role: msg.role === "bot" ? "model" : "user",
+      parts: [{ text: msg.content }],
+    })),
+  ];
+  console.log("conversation====>", JSON.stringify(conversation));
+  try {
+    const url =
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro-002:generateContent?key=" +
+      GEMINI_API_KEY;
+
+    const body = {
+      system_instruction: {
+        parts: [{ text: promt }],
       },
       contents: conversation,
     };
