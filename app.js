@@ -195,11 +195,21 @@ app.post("/generate-cv", async (req, res) => {
     .map((msg) => msg.content);
 
   try {
-    const prompt = `Given these answers, generate a professional CV in structured JSON with these fields: 
-      fullName, contactInfo, summary, workExperience (array), education (array), skills, certifications, projects. 
-      If a section is missing, leave it empty. Answers: ${userAnswers.join(
-        "\n"
-      )}`;
+    const prompt = `Given the following user answers from a career coaching session, generate a professional, ATS-friendly CV as a single JSON object, with these fields:
+- fullName (string)
+- contactInfo (string, includes phone, email, location, LinkedIn, and other links if present)
+- summary (string)
+- skills (array of strings)
+- certifications (array of strings)
+- workExperience (array of objects: {role, company, dates, responsibilities (string or array), achievements (string or array)})
+- education (array of objects: {degree, school, dates, gpa, awards, keyCourses, thesis})
+- projects (array of objects: {title, context, dates, role, skills, outcome, description})
+
+If a section is missing, leave it empty or as an empty array. Only output JSON, nothing else.
+
+Answers:
+${userAnswers.join("\n")}
+`;
     const response = await axios.post(
       `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro-002:generateContent?key=${GEMINI_API_KEY}`,
       {
