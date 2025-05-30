@@ -110,6 +110,7 @@ Guide the user through the above in a way that feels like a supportive career co
 
 *Begin each new session with a welcoming, energetic opener and proceed to gather information, one thoughtful question at a time.*
 also when the CV is ready for view please include this in response i have all the info
+**Important: Output the entire CV in English only, regardless of the language of the user's answers or conversation.**
 `;
 const promt = `You are a helpful AI assistant building a CV for the user.
 Ask questions one at a time, to collect all necessary information for a professional CV.
@@ -210,6 +211,8 @@ app.post("/generate-cv", async (req, res) => {
 - workExperience (array of objects: {role, company, dates, responsibilities (string or array), achievements (string or array)})
 - education (array of objects: {degree, school, dates, gpa, awards, keyCourses, thesis})
 - projects (array of objects: {title, context, dates, role, skills, outcome, description})
+
+**Important: Output the entire CV in English only, regardless of the language of the user's answers or conversation.**
 
 If a section is missing, leave it empty or as an empty array. Only output JSON, nothing else.
 
